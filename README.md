@@ -13,6 +13,13 @@ pipenv sync --dev
 ```
 
 
+## Run
+
+```sh
+pipenv run start
+```
+
+
 ## Note
 
 sample.jpg from:  
