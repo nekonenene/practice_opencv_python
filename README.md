@@ -8,7 +8,7 @@
 ## Setup
 
 ```sh
-pip install pipenv
+pip install --user pipenv
 pipenv sync --dev
 ```
 
@@ -17,6 +17,13 @@ pipenv sync --dev
 
 ```sh
 pipenv run start
+```
+
+
+## lint
+
+```sh
+pipenv run lint
 ```
 
 
