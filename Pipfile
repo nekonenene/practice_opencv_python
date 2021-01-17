@@ -8,9 +8,11 @@ opencv-python = "*"
 numpy = "*"
 
 [dev-packages]
+flake8 = "*"
 
 [requires]
 python_version = "3.9"
 
 [scripts]
 start = "python src/main.py"
+lint = "flake8 --show-source src"
