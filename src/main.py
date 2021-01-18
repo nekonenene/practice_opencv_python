@@ -2,6 +2,9 @@
 # https://blog.mudatobunka.org/entry/2016/10/03/014520
 # https://qiita.com/hitomatagi/items/04b1b26c1bc2e8081427
 import cv2
+import time
+
+start_time = time.time()
 
 # 画像の読み込み
 image = cv2.imread('images/sample.jpg')
@@ -35,5 +38,13 @@ for (x, y, w, h) in faces:
         cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 2)
 
 cv2.imshow('image', image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+
+elapsed_time = time.time() - start_time
+print("処理時間: {0} sec".format(elapsed_time))
+
+key = cv2.waitKey(0)
+if key == ord('s'):  # s を押したら画像保存
+    cv2.imwrite('dist/sample.jpg', image, [cv2.IMWRITE_JPEG_QUALITY, 90])
+    cv2.destroyAllWindows()
+else:  # 他のキーならウィンドウを閉じるだけ
+    cv2.destroyAllWindows()
