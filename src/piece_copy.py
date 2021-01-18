@@ -1,7 +1,7 @@
 import cv2
 
 # Load an color image in grayscale
-img = cv2.imread('sample.jpg', 0)
+img = cv2.imread('images/sample.jpg', 0)
 
 print(img.shape) # (縦のpx数, 横のpx数)
 

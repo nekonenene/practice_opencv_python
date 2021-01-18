@@ -1,7 +1,7 @@
 import cv2
 
 # Load an color image in grayscale
-img = cv2.imread('sample.jpg', 0)
+img = cv2.imread('images/sample.jpg', 0)
 
 cv2.imshow('image', img)
 key = cv2.waitKey(0)

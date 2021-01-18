@@ -4,7 +4,7 @@
 import cv2
 
 # 画像の読み込み
-image = cv2.imread('sample.jpg')
+image = cv2.imread('images/sample.jpg')
 
 # 処理速度を高めるために画像をグレースケールに変換
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
