@@ -46,7 +46,7 @@ print("処理時間: {0} sec".format(elapsed_time))
 
 key = cv2.waitKey(0)
 if key == ord('s'):  # s を押したら画像保存
-    cv2.imwrite('dist/sample.jpg', image, [cv2.IMWRITE_JPEG_QUALITY, 90])
+    cv2.imwrite('dist/sample.jpg', image, [cv2.IMWRITE_JPEG_QUALITY, 80])
     cv2.destroyAllWindows()
 else:  # 他のキーならウィンドウを閉じるだけ
     cv2.destroyAllWindows()
