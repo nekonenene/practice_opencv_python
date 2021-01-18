@@ -25,9 +25,9 @@ for (x, y, w, h) in faces:
     # 検知した顔を矩形で囲む
     cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 255), 3)
     # 顔画像（グレースケール）
-    roi_gray = gray[y : y + h, x : x + w]
+    roi_gray = gray[y : y + int(h * 2 / 3), x : x + w]
     # 顔画像（カラースケール）
-    roi_color = image[y : y + h, x : x + w]
+    roi_color = image[y: y + int(h * 2 / 3), x: x + w]
     # 顔の中から目を検知
     eyes = eye_cascade.detectMultiScale(roi_gray)
     for (ex, ey, ew, eh) in eyes:
