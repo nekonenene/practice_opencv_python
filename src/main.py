@@ -13,22 +13,24 @@ image = cv2.imread('images/sample.jpg')
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # 評価器を読み込み
-face_cascade = cv2.CascadeClassifier('data/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(
+    'data/haarcascade_frontalface_default.xml'
+)
 eye_cascade = cv2.CascadeClassifier('data/haarcascade_eye.xml')
 
 # 顔検出
 faces = face_cascade.detectMultiScale(
     gray,
-    scaleFactor = 1.2,
-    minNeighbors = 3,
-    minSize = (50, 50),
+    scaleFactor=1.2,
+    minNeighbors=3,
+    minSize=(50, 50),
 )
 
 for (x, y, w, h) in faces:
     # 検知した顔を矩形で囲む
     cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 255), 3)
     # 顔画像（グレースケール）
-    roi_gray = gray[y : y + int(h * 2 / 3), x : x + w]
+    roi_gray = gray[y: y + int(h * 2 / 3), x: x + w]
     # 顔画像（カラースケール）
     roi_color = image[y: y + int(h * 2 / 3), x: x + w]
     # 顔の中から目を検知
