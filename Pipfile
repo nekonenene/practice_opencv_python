@@ -10,6 +10,7 @@ pillow = "*"
 
 [dev-packages]
 flake8 = "*"
+autopep8 = "*"
 
 [requires]
 python_version = "3.9"
@@ -17,3 +18,5 @@ python_version = "3.9"
 [scripts]
 start = "python src/main.py"
 lint = "flake8 --show-source src"
+lint_fix = "autopep8 --in-place --recursive src"
+lint_fix_dry_run = "autopep8 --diff --recursive src"
